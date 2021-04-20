@@ -13,14 +13,16 @@ import zon.stackextender.Stackextender;
 import java.io.Console;
 
 @Mixin(Item.class)
-public class ItemMixin {
+public abstract class ItemMixin {
 
     @Mutable
     @Shadow @Final private int maxCount;
 
+    @Shadow public abstract boolean isDamageable();
+
     @Inject(at = @At("HEAD"), method = "getMaxCount")
     private void getMaxCount(CallbackInfoReturnable<Integer> cir) {
-        if (maxCount == 16) {
+        if (maxCount == 16 || (maxCount == 1 && !isDamageable())) {
             maxCount = Stackextender.smallItemStackSize;
         } else if (maxCount == 64) {
             maxCount = Stackextender.itemStackSize;

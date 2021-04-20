@@ -13,6 +13,6 @@ class StackExtenderConfig implements ConfigData {
 
     static class InnerStuff {
         int smallStackSize = 64;
-        int StackSize = 128;
+        int StackSize = 64;
     }
 }
