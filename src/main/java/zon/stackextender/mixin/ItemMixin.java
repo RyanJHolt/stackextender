@@ -10,6 +10,8 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 import zon.stackextender.Stackextender;
 
+import java.io.Console;
+
 @Mixin(Item.class)
 public class ItemMixin {
 
