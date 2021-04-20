@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "id": "stackextender",
+  "version": "${version}",
+  "name": "Stackextender",
+  "description": "Makes stacks bigger",
+  "authors": [
+    "zoniryan"
+  ],
+  "contact": {},
+  "license": "MIT",
+  "icon": "assets/stackextender/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "client": [
+      "zon.stackextender.client.StackextenderClient"
+    ],
+    "main": [
+      "zon.stackextender.Stackextender"
+    ]
+  },
+  "mixins": [
+    "stackextender.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.11.3",
+    "fabric": "*",
+    "minecraft": "1.16.5"
+  }
+}

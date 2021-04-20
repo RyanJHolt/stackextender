@@ -1,0 +1,15 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "zon.stackextender.mixin",
+  "compatibilityLevel": "JAVA_8",
+  "mixins": [
+    "ItemMixin",
+    "InventoryMixin"
+  ],
+  "client": [
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
