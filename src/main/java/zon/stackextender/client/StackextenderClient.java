@@ -8,7 +8,6 @@ import net.minecraft.client.MinecraftClient;
 
 @Environment(EnvType.CLIENT)
 public class StackextenderClient implements ClientModInitializer {
-    public static int itemStackSize = 128;
     private static final MinecraftClient CLIENT = MinecraftClient.getInstance();
 
     @Override

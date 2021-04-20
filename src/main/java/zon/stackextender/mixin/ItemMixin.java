@@ -8,7 +8,7 @@ import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
-import zon.stackextender.client.StackextenderClient;
+import zon.stackextender.Stackextender;
 
 @Mixin(Item.class)
 public class ItemMixin {
@@ -17,7 +17,11 @@ public class ItemMixin {
     @Shadow @Final private int maxCount;
 
     @Inject(at = @At("HEAD"), method = "getMaxCount")
-    private void getMaxCount(CallbackInfoReturnable<Integer> cir){
-        maxCount = StackextenderClient.itemStackSize;
+    private void getMaxCount(CallbackInfoReturnable<Integer> cir) {
+        if (maxCount == 16) {
+            maxCount = Stackextender.smallItemStackSize;
+        } else if (maxCount == 64) {
+            maxCount = Stackextender.itemStackSize;
+        }
     }
 }

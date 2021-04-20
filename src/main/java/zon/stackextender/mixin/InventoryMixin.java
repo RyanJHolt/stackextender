@@ -5,7 +5,7 @@ import net.minecraft.inventory.Inventory;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Overwrite;
 
-import zon.stackextender.client.StackextenderClient;
+import zon.stackextender.Stackextender;
 
 @SuppressWarnings("OverwriteAuthorRequired")
 @Mixin(Inventory.class)
@@ -13,6 +13,7 @@ interface InventoryMixin extends Inventory {
 
     @Overwrite
     default int getMaxCountPerStack(){
-    return StackextenderClient.itemStackSize;
+    return Stackextender.itemStackSize;
         }
+
 }
