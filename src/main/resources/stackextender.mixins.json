@@ -4,8 +4,9 @@
   "package": "zon.stackextender.mixin",
   "compatibilityLevel": "JAVA_8",
   "mixins": [
-    "ItemMixin",
-    "InventoryMixin"
+    "CreativeMixin",
+    "InventoryMixin",
+    "ItemMixin"
   ],
   "client": [
   ],

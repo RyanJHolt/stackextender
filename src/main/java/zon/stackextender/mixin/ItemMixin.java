@@ -22,7 +22,7 @@ public abstract class ItemMixin {
 
     @Inject(at = @At("HEAD"), method = "getMaxCount")
     private void getMaxCount(CallbackInfoReturnable<Integer> cir) {
-        if (maxCount == 16 || (maxCount == 1 && !isDamageable())) {
+        if (maxCount == 16) {
             maxCount = Stackextender.smallItemStackSize;
         } else if (maxCount == 64) {
             maxCount = Stackextender.itemStackSize;
